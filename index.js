@@ -1,5 +1,16 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetSum(arr, target) {
+  // Create an empty object to store the elements we've seen so far
+  const seen = {};
+
+  for (const num of arr) {
+    const difference = target - num;
+    if (seen[difference]) {
+      return true;
+    }
+    seen[num] = true;
+  }
+
+  return false;
 }
 
 /* 
